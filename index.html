@@ -3,44 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SMS Opt-In</title>
+  <title>SMS Opt-In | Wildfire Research Notification System</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; line-height: 1.6; }
-    h1 { color: #333; }
-    input, button { padding: 10px; font-size: 1em; }
-    .consent { margin-top: 20px; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 5px;
+    }
+    .consent-box {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
   </style>
 </head>
 <body>
 
-<h1>SMS Opt-In</h1>
+<h1>SMS Opt-In Consent</h1>
 
+<h2>Service Name</h2>
+<p><strong>Wildfire Research Notification System</strong></p>
+
+<h2>Business / Developer</h2>
+<p>UH / Guohui Zhang</p>
+
+<h2>Purpose of Messaging</h2>
 <p>
-By providing your mobile number, you agree to receive SMS messages from
-<strong>[Your Organization Name]</strong> regarding
-<strong>[purpose of messages]</strong>.
+This service sends SMS notifications to alert users when a wildfire event
+is triggered, including detection alerts and system notifications.
 </p>
 
-<form>
-  <label for="phone">Mobile Number:</label><br>
-  <input type="tel" id="phone" name="phone" placeholder="+1XXXXXXXXXX"><br><br>
+<h2>SMS Opt-In Form</h2>
 
-  <div class="consent">
-    <input type="checkbox" id="agree">
-    <label for="agree">
-      I agree to receive SMS messages from [Your Organization Name].
-      Message frequency may vary. Message and data rates may apply.
-      Reply <strong>STOP</strong> to opt out.
+<form>
+  <label for="phone">Mobile Phone Number</label>
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    placeholder="+1XXXXXXXXXX"
+  />
+
+  <div class="consent-box">
+    <input type="checkbox" id="consent" />
+    <label for="consent">
+      By providing your phone number, you agree to receive SMS notifications
+      from the <strong>Wildfire Research Notification System</strong> related
+      to wildfire detection alerts and system notifications.
+      Message frequency varies. Message and data rates may apply.
+      Reply <strong>STOP</strong> to opt out at any time.
     </label>
   </div>
 
-  <br>
+  <br />
   <button type="submit" disabled>Submit</button>
 </form>
 
+<h2>How Consent Is Collected</h2>
+<ul>
+  <li>
+    Users explicitly opt in by entering their phone number and confirming
+    consent before enabling SMS alerts during system setup.
+  </li>
+  <li>
+    Written acknowledgment may also be provided by the phone number owner
+    requesting SMS notifications for testing or operational purposes.
+  </li>
+</ul>
+
+<h2>Opt-In Confirmation</h2>
 <p>
-<a href="[LINK TO PRIVACY POLICY]">Privacy Policy</a>
+Consent is recorded prior to sending any SMS messages. Messages are sent only
+to phone numbers that have explicitly opted in.
 </p>
+
+<h2>Opt-Out Instructions</h2>
+<p>
+Users may opt out at any time by replying <strong>STOP</strong>.
+Upon receiving a STOP message, no further SMS messages will be sent.
+</p>
+
+<h2>Support Contact</h2>
+<p>
+Email: <a href="mailto:zhangguohui00@gmail.com">zhangguohui00@gmail.com</a>
+</p>
+
+<h2>Compliance Notes</h2>
+<ul>
+  <li>Messages are strictly transactional and informational.</li>
+  <li>No marketing or promotional messages are sent.</li>
+  <li>Messages are sent only to consenting users.</li>
+  <li>Phone numbers are not shared with third parties.</li>
+</ul>
+
+<footer>
+  <p>Date: 2025-12-28</p>
+</footer>
 
 </body>
 </html>
