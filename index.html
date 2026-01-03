@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMS Opt-In</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; line-height: 1.6; }
+    h1 { color: #333; }
+    input, button { padding: 10px; font-size: 1em; }
+    .consent { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<h1>SMS Opt-In</h1>
+
+<p>
+By providing your mobile number, you agree to receive SMS messages from
+<strong>[Your Organization Name]</strong> regarding
+<strong>[purpose of messages]</strong>.
+</p>
+
+<form>
+  <label for="phone">Mobile Number:</label><br>
+  <input type="tel" id="phone" name="phone" placeholder="+1XXXXXXXXXX"><br><br>
+
+  <div class="consent">
+    <input type="checkbox" id="agree">
+    <label for="agree">
+      I agree to receive SMS messages from [Your Organization Name].
+      Message frequency may vary. Message and data rates may apply.
+      Reply <strong>STOP</strong> to opt out.
+    </label>
+  </div>
+
+  <br>
+  <button type="submit" disabled>Submit</button>
+</form>
+
+<p>
+<a href="[LINK TO PRIVACY POLICY]">Privacy Policy</a>
+</p>
+
+</body>
+</html>
