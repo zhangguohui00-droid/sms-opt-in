@@ -17,13 +17,18 @@
       color: #2c3e50;
     }
     label {
-      display: block;
-      margin-top: 10px;
+      display: inline;
     }
-    input, button {
+    input[type="tel"] {
+      width: 300px;
       padding: 10px;
       font-size: 1em;
       margin-top: 5px;
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 1em;
+      margin-top: 15px;
     }
     .consent-box {
       margin-top: 20px;
@@ -57,8 +62,8 @@ No marketing or promotional messages are sent.
 
 <h2>SMS Opt-In Form</h2>
 
-<form>
-  <label for="phone">Mobile Phone Number</label>
+<form onsubmit="return false;">
+  <label for="phone"><strong>Mobile Phone Number</strong></label><br />
   <input
     type="tel"
     id="phone"
@@ -69,16 +74,15 @@ No marketing or promotional messages are sent.
   <div class="consent-box">
     <input type="checkbox" id="consent" />
     <label for="consent">
-      By providing your phone number, you consent to receive SMS notifications
-      from the <strong>University of Hawaii Wildfire Research Notification System</strong>
+      I agree to receive SMS notifications from the
+      <strong>University of Hawaii Wildfire Research Notification System</strong>
       regarding wildfire detection alerts and system notifications.
       Message frequency varies. Message and data rates may apply.
       Reply <strong>STOP</strong> to opt out at any time.
     </label>
   </div>
 
-  <br />
-  <button type="submit" disabled>Submit</button>
+  <button type="submit" id="submitBtn" disabled>Submit</button>
 </form>
 
 <h2>How Consent Is Collected</h2>
@@ -115,8 +119,17 @@ Email:
 </ul>
 
 <footer>
-  <p>Last updated: 2026-1-7</p>
+  <p>Last updated: 2025-12-28</p>
 </footer>
+
+<script>
+  const consentCheckbox = document.getElementById("consent");
+  const submitButton = document.getElementById("submitBtn");
+
+  consentCheckbox.addEventListener("change", function () {
+    submitButton.disabled = !this.checked;
+  });
+</script>
 
 </body>
 </html>
