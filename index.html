@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>SMS Opt-In – Wildfire Research Notification System</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     body {
@@ -12,24 +12,17 @@
       padding: 30px;
       line-height: 1.6;
     }
-
     .container {
       max-width: 750px;
       margin: auto;
-      background: #fff;
+      background: #ffffff;
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
     h1, h2 {
       color: #003366;
     }
-
-    label {
-      cursor: pointer;
-    }
-
     input[type="tel"] {
       width: 100%;
       padding: 10px;
@@ -37,15 +30,12 @@
       margin-bottom: 20px;
       font-size: 16px;
     }
-
     .consent-box {
       margin-bottom: 20px;
     }
-
     .consent-box input {
       margin-right: 10px;
     }
-
     button {
       background-color: #003366;
       color: white;
@@ -55,16 +45,13 @@
       border-radius: 5px;
       cursor: not-allowed;
     }
-
     button.enabled {
       cursor: pointer;
       background-color: #0055aa;
     }
-
     .section {
       margin-top: 25px;
     }
-
     .footer {
       font-size: 14px;
       color: #555;
@@ -82,17 +69,16 @@
       Wildfire Research Notification System
     </p>
 
-    <p><strong>End Business / Sender:</strong><br>
+    <p><strong>End Business / Message Sender:</strong><br>
       University of Hawaii – Wildfire Research Program
     </p>
 
     <div class="section">
       <h2>Purpose of Messaging</h2>
       <p>
-        This service sends SMS notifications to alert the user when a wildfire-related
-        event is triggered, including detection alerts and system notifications.
-        Messages are strictly informational and transactional. No marketing or
-        promotional messages are sent.
+        This service sends SMS notifications related to wildfire detection events
+        and system notifications. Messages are strictly informational and
+        transactional. No marketing or promotional messages are sent.
       </p>
     </div>
 
@@ -100,7 +86,7 @@
       <h2>SMS Opt-In Form</h2>
 
       <form>
-        <label for="phone">Mobile Phone Number</label>
+        <label for="phone"><strong>Mobile Phone Number</strong></label>
         <input
           type="tel"
           id="phone"
@@ -114,7 +100,7 @@
           <label for="consent">
             I agree to receive SMS notifications from the
             <strong>University of Hawaii – Wildfire Research Notification System</strong>
-            regarding wildfire alerts and system notifications.
+            related to wildfire alerts and system notifications.
             Message frequency varies. Message and data rates may apply.
             Reply <strong>STOP</strong> to opt out at any time.
           </label>
@@ -129,8 +115,9 @@
     <div class="section">
       <h2>Opt-In Confirmation</h2>
       <p>
-        Consent is recorded prior to sending any SMS messages. Messages are sent only
-        to phone numbers that have explicitly opted in using the form above.
+        Consent is collected via the web form above. Messages are sent only after
+        the user has entered their phone number and explicitly checked the SMS
+        consent checkbox.
       </p>
     </div>
 
@@ -138,39 +125,32 @@
       <h2>Opt-Out Instructions</h2>
       <p>
         Users may opt out at any time by replying <strong>STOP</strong>.
-        No further messages will be sent after STOP.
+        No further SMS messages will be sent after opt-out.
       </p>
     </div>
 
     <div class="section">
-      <h2>Privacy Policy</h2>
+      <h2>Privacy</h2>
       <p>
-        Phone numbers are collected solely for the purpose of sending wildfire
-        notification messages. Phone numbers are not sold, shared, or disclosed to
-        third parties and are retained only as long as necessary to provide the service.
+        Phone numbers are used solely for sending wildfire-related SMS notifications.
+        Phone numbers are not shared with third parties.
       </p>
     </div>
 
     <div class="section">
       <h2>Support Contact</h2>
       <p>
-        Email: <a href="mailto:zhangguohui00@gmail.com">zhangguohui00@gmail.com</a>
+        Email:
+        <a href="mailto:zhangguohui00@gmail.com">
+          zhangguohui00@gmail.com
+        </a>
       </p>
-    </div>
-
-    <div class="section">
-      <h2>Compliance Notes</h2>
-      <ul>
-        <li>Messages are sent only to consenting users.</li>
-        <li>No marketing or promotional content is sent.</li>
-        <li>Phone numbers are not shared with third parties.</li>
-        <li>Messages are strictly operational and informational.</li>
-      </ul>
     </div>
 
     <div class="footer">
       <p><strong>Date:</strong> 2025-12-28</p>
     </div>
+
   </div>
 
   <script>
@@ -178,13 +158,8 @@
     const submitBtn = document.getElementById("submitBtn");
 
     consentCheckbox.addEventListener("change", function () {
-      if (this.checked) {
-        submitBtn.disabled = false;
-        submitBtn.classList.add("enabled");
-      } else {
-        submitBtn.disabled = true;
-        submitBtn.classList.remove("enabled");
-      }
+      submitBtn.disabled = !this.checked;
+      submitBtn.classList.toggle("enabled", this.checked);
     });
   </script>
 
