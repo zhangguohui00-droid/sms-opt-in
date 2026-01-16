@@ -1,167 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>SMS Opt-In – Wildfire Research Notification System</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Wildfire Research Notification System – SMS Opt-In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
       padding: 30px;
       line-height: 1.6;
     }
     .container {
-      max-width: 750px;
+      max-width: 720px;
       margin: auto;
       background: #ffffff;
       padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 6px;
     }
     h1, h2 {
-      color: #003366;
+      color: #333;
     }
-    input[type="tel"] {
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"] {
       width: 100%;
       padding: 10px;
       margin-top: 6px;
-      margin-bottom: 20px;
-      font-size: 16px;
+      font-size: 1em;
     }
-    .consent-box {
-      margin-bottom: 20px;
+    .consent {
+      margin-top: 15px;
     }
-    .consent-box input {
-      margin-right: 10px;
+    .consent label {
+      font-weight: normal;
     }
     button {
-      background-color: #003366;
-      color: white;
-      padding: 12px 25px;
-      font-size: 16px;
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 1em;
+      background-color: #0066cc;
+      color: #ffffff;
       border: none;
-      border-radius: 5px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:disabled {
+      background-color: #cccccc;
       cursor: not-allowed;
     }
-    button.enabled {
-      cursor: pointer;
-      background-color: #0055aa;
-    }
-    .section {
-      margin-top: 25px;
-    }
     .footer {
-      font-size: 14px;
-      color: #555;
       margin-top: 30px;
+      font-size: 0.9em;
+      color: #555;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <h1>SMS Opt-In Consent</h1>
+  <h1>Wildfire Research Notification System</h1>
 
-    <p><strong>Service Name:</strong><br>
-      Wildfire Research Notification System
-    </p>
+  <p>
+    This page allows users to opt in to receive SMS notifications from the
+    <strong>Wildfire Research Notification System</strong>, operated by the
+    <strong>University of Hawaii</strong>.
+  </p>
 
-    <p><strong>End Business / Message Sender:</strong><br>
-      University of Hawaii – Wildfire Research Program
-    </p>
+  <h2>Purpose of Messaging</h2>
+  <p>
+    SMS messages are sent to notify users when a wildfire event is detected.
+    Messages are strictly informational and transactional.
+  </p>
 
-    <div class="section">
-      <h2>Purpose of Messaging</h2>
-      <p>
-        This service sends SMS notifications related to wildfire detection events
-        and system notifications. Messages are strictly informational and
-        transactional. No marketing or promotional messages are sent.
-      </p>
+  <h2>How to Opt In</h2>
+  <ol>
+    <li>Enter your mobile phone number in the form below.</li>
+    <li>Review the SMS consent language.</li>
+    <li>Manually check the SMS consent checkbox.</li>
+    <li>Click Submit to complete the opt-in process.</li>
+  </ol>
+
+  <p>
+    SMS messages are sent only after the user completes all steps above.
+  </p>
+
+  <form>
+    <label for="phone">Mobile Phone Number</label>
+    <input type="text" id="phone" name="phone" placeholder="+1XXXXXXXXXX">
+
+    <div class="consent">
+      <input type="checkbox" id="consent">
+      <label for="consent">
+        By providing your phone number, you agree to receive SMS notifications
+        from the <strong>Wildfire Research Notification System</strong> operated
+        by the <strong>University of Hawaii</strong>.
+        Message frequency varies. Message and data rates may apply.
+        Reply STOP to opt out.
+      </label>
     </div>
 
-    <div class="section">
-      <h2>SMS Opt-In Form</h2>
-
-      <form>
-        <label for="phone"><strong>Mobile Phone Number</strong></label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          placeholder="+1XXXXXXXXXX"
-          required
-        />
-
-        <div class="consent-box">
-          <input type="checkbox" id="consent" />
-          <label for="consent">
-            I agree to receive SMS notifications from the
-            <strong>University of Hawaii – Wildfire Research Notification System</strong>
-            related to wildfire alerts and system notifications.
-            Message frequency varies. Message and data rates may apply.
-            Reply <strong>STOP</strong> to opt out at any time.
-          </label>
-        </div>
-
-        <button type="submit" id="submitBtn" disabled>
-          Submit
-        </button>
-      </form>
-    </div>
-
-    <div class="section">
-      <h2>Opt-In Confirmation</h2>
-      <p>
-        Consent is collected via the web form above. Messages are sent only after
-        the user has entered their phone number and explicitly checked the SMS
-        consent checkbox.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Opt-Out Instructions</h2>
-      <p>
-        Users may opt out at any time by replying <strong>STOP</strong>.
-        No further SMS messages will be sent after opt-out.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Privacy</h2>
-      <p>
-        Phone numbers are used solely for sending wildfire-related SMS notifications.
-        Phone numbers are not shared with third parties.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Support Contact</h2>
-      <p>
-        Email:
-        <a href="mailto:zhangguohui00@gmail.com">
-          zhangguohui00@gmail.com
-        </a>
-      </p>
-    </div>
-
-    <div class="footer">
-      <p><strong>Date:</strong> 2025-12-28</p>
-    </div>
-
-  </div>
+    <button type="submit" id="submitBtn" disabled>Submit</button>
+  </form>
 
   <script>
     const consentCheckbox = document.getElementById("consent");
-    const submitBtn = document.getElementById("submitBtn");
+    const submitButton = document.getElementById("submitBtn");
 
     consentCheckbox.addEventListener("change", function () {
-      submitBtn.disabled = !this.checked;
-      submitBtn.classList.toggle("enabled", this.checked);
+      submitButton.disabled = !this.checked;
     });
   </script>
 
+  <div class="footer">
+    <p><strong>Opt-Out:</strong> Reply STOP to unsubscribe at any time.</p>
+    <p><strong>Support:</strong> zhangguohui00@gmail.com</p>
+    <p><strong>No marketing or promotional messages are sent.</strong></p>
+  </div>
+
+</div>
 </body>
 </html>
